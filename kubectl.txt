@@ -1,0 +1,126 @@
+nginx pods 1
+Name:             nginx-deployment-5fbdf85c67-sttxw
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             aks-agentpool-16996082-vmss000000/10.224.0.4
+Start Time:       Fri, 09 Jun 2023 13:10:48 +0000
+Labels:           app=nginx-deployment
+                  pod-template-hash=5fbdf85c67
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.14
+IPs:
+  IP:           10.244.0.14
+Controlled By:  ReplicaSet/nginx-deployment-5fbdf85c67
+Containers:
+  nginx:
+    Container ID:   containerd://5da5d5d8e3a83ac459fe3ccae423bddf0089056572e60f770aef784bd16a7413
+    Image:          nginx
+    Image ID:       docker.io/library/nginx@sha256:af296b188c7b7df99ba960ca614439c99cb7cf252ed7bbc23e90cfda59092305
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Fri, 09 Jun 2023 13:10:50 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-k4lkm (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-k4lkm:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  28m   default-scheduler  Successfully assigned default/nginx-deployment-5fbdf85c67-sttxw to aks-agentpool-16996082-vmss000000
+  Normal  Pulling    28m   kubelet            Pulling image "nginx"
+  Normal  Pulled     28m   kubelet            Successfully pulled image "nginx" in 843.312812ms (843.461513ms including waiting)
+  Normal  Created    28m   kubelet            Created container nginx
+  Normal  Started    28m   kubelet            Started container nginx
+
+nginx pod 2
+Name:             nginx-deployment-5fbdf85c67-964lg
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             aks-agentpool-16996082-vmss000000/10.224.0.4
+Start Time:       Fri, 09 Jun 2023 13:10:48 +0000
+Labels:           app=nginx-deployment
+                  pod-template-hash=5fbdf85c67
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.15
+IPs:
+  IP:           10.244.0.15
+Controlled By:  ReplicaSet/nginx-deployment-5fbdf85c67
+Containers:
+  nginx:
+    Container ID:   containerd://d20bb7cd15d463939772c79bac72f211cf065285ec69498f90f980af6d86a19d
+    Image:          nginx
+    Image ID:       docker.io/library/nginx@sha256:af296b188c7b7df99ba960ca614439c99cb7cf252ed7bbc23e90cfda59092305
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Fri, 09 Jun 2023 13:10:50 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-srf78 (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-srf78:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  30m   default-scheduler  Successfully assigned default/nginx-deployment-5fbdf85c67-964lg to aks-agentpool-16996082-vmss000000
+  Normal  Pulling    30m   kubelet            Pulling image "nginx"
+  Normal  Pulled     30m   kubelet            Successfully pulled image "nginx" in 635.094249ms (1.440009846s including waiting)
+  Normal  Created    30m   kubelet            Created container nginx
+  Normal  Started    30m   kubelet            Started container nginx
+
+redis-service
+Name:              redis-service
+Namespace:         default
+Labels:            <none>
+Annotations:       <none>
+Selector:          app=redis
+Type:              ClusterIP
+IP Family Policy:  SingleStack
+IP Families:       IPv4
+IP:                10.0.61.236
+IPs:               10.0.61.236
+Port:              <unset>  6379/TCP
+TargetPort:        6379/TCP
+Endpoints:         <none>
+Session Affinity:  None
+Events:            <none>
